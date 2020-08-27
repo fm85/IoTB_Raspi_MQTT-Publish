@@ -40,7 +40,7 @@ def start():
         print("Publishing with the following Topic:" + topic)
         while(True):
             time.sleep(2)
-            humidity, temperature = Adafruit_DHT.read_retry(mySensorType, mySensorPin)
+            humidity, temperature = Adafruit_DHT.read(mySensorType, mySensorPin)
             message = temperature
             myClient.publish(topic,message)
     except (KeyboardInterrupt, SystemExit):
